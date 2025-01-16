@@ -1,0 +1,88 @@
+function getMoodThresholds(mood) {
+    const moodMapping = {
+        Happy: {
+            valence: [0.7, 1.0],
+            energy: [0.6, 0.8],
+            bpm: [100, 150],
+            acousticness: [0.2, 0.5],
+            instrumentalness: [0.1, 0.3],
+            danceability: [0.7, 1.0],
+            liveness: [0.4, 0.6],
+            key: [0, 11],
+        },
+        Exuberant: {
+            valence: [0.8, 1.0],
+            energy: [0.8, 1.0],
+            bpm: [120, 160],
+            acousticness: [0.1, 0.4],
+            instrumentalness: [0.0, 0.2],
+            danceability: [0.8, 1.0],
+            liveness: [0.6, 0.8],
+            key: [0, 11],
+        },
+        Energetic: {
+            valence: [0.6, 0.8],
+            energy: [0.8, 1.0],
+            bpm: [140, 180],
+            acousticness: [0.0, 0.3],
+            instrumentalness: [0.0, 0.2],
+            danceability: [0.8, 1.0],
+            liveness: [0.3, 0.5],
+            key: [0, 11],
+        },
+        Frantic: {
+            valence: [0.4, 0.7],
+            energy: [0.8, 1.0],
+            bpm: [150, 200],
+            acousticness: [0.0, 0.2],
+            instrumentalness: [0.0, 0.1],
+            danceability: [0.9, 1.0],
+            liveness: [0.5, 0.7],
+            key: [-11, -1],
+        },
+        Sad: {
+            valence: [0.1, 0.3],
+            energy: [0.1, 0.3],
+            bpm: [40, 80],
+            acousticness: [0.6, 0.9],
+            instrumentalness: [0.5, 0.7],
+            danceability: [0.1, 0.4],
+            liveness: [0.2, 0.4],
+            key: [-11, -1],
+        },
+        Depression: {
+            valence: [0.0, 0.2],
+            energy: [0.0, 0.2],
+            bpm: [40, 60],
+            acousticness: [0.7, 1.0],
+            instrumentalness: [0.6, 0.8],
+            danceability: [0.1, 0.3],
+            liveness: [0.1, 0.3],
+            key: [-11, -1],
+        },
+        Calm: {
+            valence: [0.3, 0.6],
+            energy: [0.2, 0.4],
+            bpm: [60, 80],
+            acousticness: [0.8, 1.0],
+            instrumentalness: [0.7, 1.0],
+            danceability: [0.2, 0.5],
+            liveness: [0.3, 0.5],
+            key: [-11, -1],
+        },
+        Content: {
+            valence: [0.5, 0.8],
+            energy: [0.3, 0.5],
+            bpm: [70, 110],
+            acousticness: [0.4, 0.7],
+            instrumentalness: [0.3, 0.6],
+            danceability: [0.4, 0.7],
+            liveness: [0.4, 0.6],
+            key: [0, 11],
+        },
+    };
+
+    return moodMapping[mood] || null;
+}
+
+module.exports = { getMoodThresholds };
